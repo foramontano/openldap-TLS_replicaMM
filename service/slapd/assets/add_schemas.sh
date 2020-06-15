@@ -22,13 +22,11 @@ for f in $(find schema -name \*.schema -type f|sort); do
 
 	SCHEMAS="$SCHEMAS $PWD/${f}"
 done
-echo "Antes de entrar en schema-to-ldif.sh"
+
 $PWD/schema-to-ldif.sh "$SCHEMAS"
-echo "Después de entrar en schema-to-ldif.sh"
 
 # add converted schemas
 for f in $(find schema -name \*.ldif -type f|sort); do
-	echo "Procesando fichero ${f}"
 	log-helper debug "Processing file ${f}"
 	# add schema if not already exists
 	SCHEMA=$(basename "${f}" .ldif)
