@@ -23,7 +23,7 @@ deploy:
 		--env LDAP_TLS_CRT_FILENAME=live/ldap.decieloytierra.es/cert.pem \
 		--env LDAP_TLS_KEY_FILENAME=live/ldap.decieloytierra.es/privkey.pem \
 		--env LDAP_TLS_CA_CRT_FILENAME=live/ldap.decieloytierra.es/fullchain.pem \
-		--detach foramontano/openldap-fdschema:0.1.0
+		--detach $(NAME):$(VERSION)
 
 build-nocache:
 	docker build -t $(NAME):$(VERSION) --no-cache --rm .
