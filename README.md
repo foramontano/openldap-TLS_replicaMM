@@ -15,13 +15,13 @@ En este caso lo hago a través de **NGINX** que es el servidor WEB que tengo ins
 
 ## 3. Ejecutar el script del Makefile para creación de sevidores LDAP con Réplicación 
 ```
-make replica**
+make replica
 ```
-Al ejecutar el script se crearán dos contenedores (**openldap1** y **openldap2**) vinculados entre sí
+Al ejecutar el script se crearán dos contenedores (**openldap1** y **openldap2**) vinculados entre sí, en formato réplica Multi-Master y preparado para comunicación segura por TLS
 - El contenedor 1 estará escuchando en el puerto 389 --> ldap://ldap1.decieloytierra.es
 - El contenedor 2 estará escuchando en el puerto 390 --> ldap://ldap1.decieloytierra.es:390
 
-## 3. Comprobar que funciona la funcionalidad de Réplica
+## 4. Comprobar que funciona la funcionalidad de Réplica
   - Probamos en el contenedor 1 (**openldap1**)
 ```
   docker cp ~/foramontano/openldap-schema/service/slapd/assets/test/nuevo_usuario.ldif openldap1:/container/service/slapd/assets/test/
