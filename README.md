@@ -21,6 +21,10 @@ Al ejecutar el script se crearán dos contenedores (**openldap1** y **openldap2*
 - El contenedor 1 estará escuchando en el puerto 389 --> ldap://ldap1.decieloytierra.es
 - El contenedor 2 estará escuchando en el puerto 390 --> ldap://ldap1.decieloytierra.es:390
 
+Incluir el DOMINIO y la IP del servidor LDAP1 en el contenedor 2 (openldap2) y viceversa.
+```
+make comunica-replicas
+```
 ## 4. Comprobar que funciona la funcionalidad de Réplica
   - Probamos en el contenedor 1 (**openldap1**)
 ```
